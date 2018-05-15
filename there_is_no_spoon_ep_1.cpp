@@ -19,7 +19,6 @@ int main()
         string line; // width characters, each either 0 or .
         getline(cin, line);
         input.push_back(line);
-        cerr << line << endl;
     }
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; ++j) {
@@ -27,25 +26,21 @@ int main()
                 cout << j << " " << i;
                 //right node
                 bool isFound = false;
-                for (int k = i; k < height && !isFound; ++k) {
-                    for (int l = j + 1; l < width && !isFound; ++l) {
-                        if (input[k][l] == '0') {
-                            cout << " " << l << " " << k;
-                            isFound = true;
-                        }
+                for (int l = j + 1; l < width && !isFound; ++l) {
+                    if (input[i][l] == '0') {
+                        cout << " " << l << " " << i;
+                        isFound = true;
                     }
                 }
                 if (!isFound) cout << " -1 -1";
                 //bottom node
                 isFound = false;
                 for (int k = i + 1; k < height && !isFound; ++k) {
-                    for (int l = j; l < width && !isFound; ++l) {
-                        if (input[k][l] == '0') {
-                            cout << " " << l << " " << k;
+                        if (input[k][j] == '0') {
+                            cout << " " << j << " " << k;
                             isFound = true;
                         }
                     }
-                }
                 if (!isFound) cout << " -1 -1";
                 cout << endl;
             }

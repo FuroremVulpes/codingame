@@ -26,7 +26,7 @@ int main()
     sort(Ys.begin(), Ys.end());
     double medianX = Xs.size()%2 ? Xs[Xs.size()/2] : (Xs[Xs.size()/2 - 1] + Xs[Xs.size()/2])/2;
     double medianY = Ys.size()%2 ? Ys[Ys.size()/2] : (Ys[Ys.size()/2 - 1] + Ys[Ys.size()/2])/2;;
-    int cableAmount = 0;
+    long long int cableAmount = 0;
     for (size_t i = 0; i < N; ++i) {
         cableAmount += abs(medianX - Xs[i]) + abs(medianY - Ys[i]);
     }

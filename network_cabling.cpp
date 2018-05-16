@@ -14,21 +14,32 @@ int main()
 {
     int N;
     cin >> N; cin.ignore();
-    vector <int> Xs, Ys;
+    vector <pair<int, int>> nodes;
     for (int i = 0; i < N; ++i) {
         int X;
         int Y;
         cin >> X >> Y; cin.ignore();
-        Xs.push_back(X);
-        Ys.push_back(Y);
+        nodes.push_back({X, Y});
     }
-    sort(Xs.begin(), Xs.end());
-    sort(Ys.begin(), Ys.end());
-    double medianX = Xs.size()%2 ? Xs[Xs.size()/2] : (Xs[Xs.size()/2 - 1] + Xs[Xs.size()/2])/2;
-    double medianY = Ys.size()%2 ? Ys[Ys.size()/2] : (Ys[Ys.size()/2 - 1] + Ys[Ys.size()/2])/2;;
-    long long int cableAmount = 0;
-    for (size_t i = 0; i < N; ++i) {
-        cableAmount += abs(medianX - Xs[i]) + abs(medianY - Ys[i]);
+    sort(nodes.begin(), nodes.end(),
+         [](pair<int, int> pair1, pair<int, int> pair2) { return pair1.second < pair2.second;});
+
+    double medianMainCableY;
+    if (nodes.size()%2)
+        medianMainCableY = nodes[nodes.size()/2].second;
+    else
+        medianMainCableY = (nodes[nodes.size()/2 - 1].second + nodes[nodes.size()/2].second)/2;;
+
+    int minNodeX = numeric_limits<int>::max();
+    int maxNodeX = numeric_limits<int>::min();
+    for (auto& node : nodes) {
+        if (node.first < minNodeX) minNodeX = node.first;
+        if (node.first > maxNodeX) maxNodeX = node.first;
+    }
+
+    long long int cableAmount = maxNodeX - minNodeX;
+    for (auto& node : nodes) {
+        cableAmount += abs(medianMainCableY - node.second);
     }
 
     // Write an action using cout. DON'T FORGET THE "<< endl"

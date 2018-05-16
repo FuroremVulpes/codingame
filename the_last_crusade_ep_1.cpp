@@ -41,43 +41,22 @@ int main()
         switch (pattern[YI][XI]){
             case 0:
                 break;
-            case 1:
-                if (POS == "LEFT") cout << XI + 1 << " " << YI + 1 << endl;
-                else if (POS == "RIGHT") cout << XI - 1 << " " << YI + 1 << endl;
-                     else cout << XI + 1 << " " << YI + 1 << endl;
+            case 1: case 3: case 7: case 8: case 9:
+                if (POS == "LEFT" || POS == "RIGHT") cout << XI << " " << YI + 1 << endl;
+                else cout << XI << " " << YI + 1 << endl;
                 break;
             case 2: case 6:
                 if (POS == "LEFT") cout << XI + 1 << " " << YI << endl;
                 else if (POS == "RIGHT") cout << XI - 1 << " " << YI << endl;
                 break;
-            case 3:
-                cout << XI << " " << YI + 1 << endl;
+            case 4: case 10: case 12:
+                if (POS == "TOP") cout << XI - 1 << " " << YI << endl;
+                else if (POS == "RIGHT") cout << XI << " " << YI + 1 << endl;
                 break;
-            case 4: case 12:
-                cout << XI - 1 << " " << YI + 1 << endl;
+            case 5: case 11: case 13:
+                if (POS == "TOP") cout << XI + 1 << " " << YI << endl;
+                else if (POS == "LEFT") cout << XI << " " << YI + 1 << endl;
                 break;
-            case 5: case 13:
-                cout << XI + 1 << " " << YI + 1 << endl;
-                break;
-            case 7:
-                if (POS == "RIGHT") cout << XI - 1 << " " << YI + 1 << endl;
-                else if (POS == "TOP") cout << XI << " " << YI + 1 << endl;
-                break;
-            case 8:
-                if (POS == "RIGHT") cout << XI - 1 << " " << YI + 1 << endl;
-                else if (POS == "LEFT") cout << XI + 1 << " " << YI + 1 << endl;
-                break;
-            case 9:
-                if (POS == "LEFT") cout << XI + 1 << " " << YI + 1 << endl;
-                else if (POS == "TOP") cout << XI << " " << YI + 1 << endl;
-                break;
-            case 10:
-                cout << XI - 1 << " " << YI << endl;
-                break;
-            case 11:
-                cout << XI + 1 << " " << YI << endl;
-                break;
-
         }
 
         // One line containing the X Y coordinates of the room in which you believe Indy will be on the next turn.

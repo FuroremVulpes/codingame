@@ -19,17 +19,16 @@ int main()
         cin >> v; cin.ignore();
         stockValues.push_back(v);
     }
-    int indexMax = 0;
-    for (int j = 0; j < n - 1; ++j) {
-        if (stockValues[j] > stockValues[indexMax]) indexMax = j;
+    int diff = 0;
+    for (int i = 0; i < n - 1; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            int temp = stockValues[j] - stockValues[i];
+            if (temp < diff){
+                diff = stockValues[j] - stockValues[i];
+            } else if (temp > 0) break;
+        }
     }
-    int indexMin = indexMax;
-    cerr << "indexMax: " << indexMax << " value: " << stockValues[indexMax] << endl;
-    for (int k = indexMax; k < n; ++k) {
-        if (stockValues[k] < stockValues[indexMin]) indexMin = k;
-    }
-    cerr << "indexMin: " << indexMin << " value: " << stockValues[indexMin] << endl;
-    cout << stockValues[indexMin] - stockValues[indexMax] << endl;
+    cout << diff << endl;
 
     // Write an action using cout. DON'T FORGET THE "<< endl"
     // To debug: cerr << "Debug messages..." << endl;

@@ -131,7 +131,7 @@ pair<int, int> prev_node_id_and_distance_BFS (int start_node, int end_node, cons
         int curr_node;
         for (size_t i = 0; i < prev_size; ++i) {
             curr_node = queue[i];
-            //cerr << "curr_node: " << curr_node << " i: " << i << endl;
+            cerr << "curr_node: " << curr_node << endl;
             if (curr_node == end_node) {
                 //cerr << "curr_node == end_node" << endl;
                 //cerr << "prev_node: " << prev_node << " distance: " << distance << endl;
@@ -147,13 +147,11 @@ pair<int, int> prev_node_id_and_distance_BFS (int start_node, int end_node, cons
                     queue.push_back(linked_node);
                 }
             }
+
+            cerr << "queue.size(): " << queue.size() << endl;
+            if (queue.size() - prev_size != 0 && nodes[curr_node].is_linked_node(end_node)) prev_node = curr_node;
+            cerr << "prev_node: " << prev_node << endl;
         }
-        cerr << "Before cutting queue:";
-        for (auto it : queue) {
-            cerr << " " << it;
-        }
-        cerr << endl;
-        if (queue.size() - prev_size != 0) prev_node = curr_node;
         queue.erase(queue.begin(), queue.begin() + prev_size);
         ++distance;
     }

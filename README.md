@@ -1,5 +1,45 @@
 # codingame
 ## Medium
+- **Shadows of the Knight Ep.1**: Binary Search, Intervals 
+[Task](https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1)
+_Unsolved_
+
+- **War**: Queues 
+[Task](https://www.codingame.com/training/medium/winamax-battle)
+_Unsolved_
+
+- **Mars Lander Ep.2**: Distances, Trigonometry 
+[Task](https://www.codingame.com/training/medium/mars-lander-episode-2)
+_Unsolved_
+
+- **Teads Sponsored Contest**
+[Task](https://www.codingame.com/training/medium/teads-sponsored-contest)
+_Unsolved_
+
+- **Conway Sequence**: Sequences 
+[Task](https://www.codingame.com/training/medium/conway-sequence)
+_Unsolved_
+
+- **Telephone Numbers**: Sets, Tries
+[Task](https://www.codingame.com/training/medium/telephone-numbers)
+_Unsolved_
+
+- **Dwarfs Standing on the Shoulders of Giants**: Graphs, Memoization, Recursion 
+[Task](https://www.codingame.com/training/medium/dwarfs-standing-on-the-shoulders-of-giants)
+_Unsolved_
+
+- **Bender Ep.1**: Simulation, State Machine 
+[Task](https://www.codingame.com/training/medium/bender-episode-1)
+_Unsolved_
+
+- **The Gift**: Greedy Algorithms 
+[Task](https://www.codingame.com/training/medium/the-gift)
+_Unsolved_
+
+- **Mayan Calculation**: Strings, Radix 
+[Task](https://www.codingame.com/training/medium/mayan-calculation)
+_Unsolved_
+
 - **Scrabble**: Loops, Conditions 
 [Task](https://www.codingame.com/training/medium/scrabble)
 [Solution C++](./scrabble.cpp)
@@ -39,6 +79,7 @@
 - **Horse-Racing Duals**: Loops 
 [Task](https://www.codingame.com/training/easy/horse-racing-duals)
 [Solution C++](./Horse_racing_Duals.cpp)
+[Solution Python](./Horse_racing_Duals.py)
 
 - **Power of Thor Ep.1**: Conditions 
 [Task](https://www.codingame.com/training/easy/power-of-thor-episode-1)

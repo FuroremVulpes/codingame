@@ -79,13 +79,20 @@ int main()
                 prev_endangered_node = prev_and_dist.first;
             }
         }
-        nodes[endangered_gateway].delete_linked_node(prev_endangered_node);
-        nodes[prev_endangered_node].delete_linked_node(endangered_gateway);
         //cerr << "result: " << endangered_gateway << " " << prev_endangered_node << endl;
 
 
         // Example: 0 1 are the indices of the nodes you wish to sever the link between
-        cout << endangered_gateway << " " << prev_endangered_node << endl;
+        if (min_endangered_distance <= 1){
+            nodes[endangered_gateway].delete_linked_node(SI);
+            nodes[SI].delete_linked_node(endangered_gateway);
+            cout << endangered_gateway << " " << SI << endl;
+        } else {
+            nodes[endangered_gateway].delete_linked_node(prev_endangered_node);
+            nodes[prev_endangered_node].delete_linked_node(endangered_gateway);
+            cout << endangered_gateway << " " << prev_endangered_node << endl;
+        }
+
     }
 }
 

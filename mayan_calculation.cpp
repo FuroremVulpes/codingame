@@ -63,9 +63,10 @@ int main()
         case '/': num_result = S1_number / S2_number;
         case '*': num_result = S1_number * S2_number;
     }
+    cerr << S1_number << " " << operation << S2_number << " = " << num_result << endl;
     int output = num_result % 20;
     while (output != 0){
-        
+
         output %= 20;
     }
 
